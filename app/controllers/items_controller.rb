@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # ログインしてない時にトップページへ飛ばすコード
+  # ログインしてない時にトップページへ強制的に飛ばすコード
   before_action :move_to_index, except: :index
 
   def index
@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  #ストロングパラメータで！！！current_user.id)＝>デバイスを導入しているから使える
   def create
     Item.create(name: item_params[:name], price: item_params[:price], user_id: current_user.id)
   end
