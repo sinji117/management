@@ -1,8 +1,10 @@
-<h1>購入商品一覧</h1>
+<h1>⭐️みんなのストックしている物⭐️</h1>
 <% if user_signed_in? %>
   <% @items.each do |item| %>
   <%# #present?メソッドでニックネイルがなければ非表示にすることができる 又ニックネームがなければI'dが出る三項演算子%>
-  <p><%= item.name %>：<%= item.price %>：<%= item.user.nickname.present? ? "購入者 #{item.user.nickname}" : "会員No.#{item.user.id}" %></p>
+  <p><%= item.name %>：<%= item.price %>：<%= item.user_id %>
+  
+  </p>
   <% end %>
 <% else %>
   <p>ログインしてください</p>
