@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
   <% @items.each do |item| %>
   <%# #present?メソッドでニックネイルがなければ非表示にすることができる 又ニックネームがなければI'dが出る三項演算子%>
-  <p><%= item.name %>：<%= item.price %>：<%= item.user_id %>
+  <p><%= item.name %>：<%= item.price %>
   
   </p>
   <% end %>
