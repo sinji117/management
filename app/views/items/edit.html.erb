@@ -1,0 +1,11 @@
+<%= form_for @item, url: item_path, html: { method: :patch } do |f| %>
+  <h1>ご購入商品の情報を入力</h1>
+  <p>商品名：<%= f.text_field :name %></p>
+  <p>ストック数：<%= f.text_field :stock_number %></>
+  <p>前回の購入日：<%= f.text_field  :buy_day %></p>
+  <p>今回の購入日：<%= f.date_field  :buy_day %></p>
+  <span><%= time_ago_in_words(@item.updated_at) %></span>前に購入
+  
+  <input type="submit" value="SENT">
+  
+<% end %>

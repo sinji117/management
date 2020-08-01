@@ -2,13 +2,13 @@
 <table border="1" width="50%">
 <tr>
 <th>ストック物</th>
-<th>値段</th>
+
 <th>買った日</th>
 <th>ストック数</th>
 </tr>
 <tr>
 <td><%= item.name %></td>
-<td><%= item.price %>円</td>
+
 <td><%= item.buy_day %>日</td>
 <td><%= item.stock_number %>個:</td>
 </tr>
@@ -16,10 +16,11 @@
 
 
 
-
   
-  <span><%= time_ago_in_words(item.created_at) %></span>前に購入
+  <span><%= time_ago_in_words(item.updated_at) %></span>前に購入
+ 
+  <%= link_to "ストック物を買ってきたから編集", edit_item_path(item.id) , method: :get %>
   <%= link_to '買う予定は今後ないのでリストから消す', item_path(item), method: :delete, data: {confirm: "削除しますか?"}  %>
-   
+    
   
 <% end %>
