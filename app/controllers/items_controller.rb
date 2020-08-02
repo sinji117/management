@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   #ストロングパラメータで！！！current_user.id)＝>デバイスを導入しているから使える
   def create
-    Item.create(name: item_params[:name], price: item_params[:price], buy_day: item_params[:buy_day], stock_number: item_params[:stock_number])
+    Item.create(name: item_params[:name], price: item_params[:price], buy_day: item_params[:buy_day], stock_number: item_params[:stock_number], user_id: current_user.id)
   end
 
   def edit

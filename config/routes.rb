@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :items
   # 以下のルーティングを追加 onlyでshowアクションのみに制限
   resources :users, only: :show
+  post "/callback" => "linebot#callback"
 end
